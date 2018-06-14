@@ -6,11 +6,19 @@ import { MatTableModule, MatSortModule } from "@angular/material";
 
 
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { UsertableComponent } from './usertable/usertable.component';
+
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    UsertableComponent,
+
   ],
   imports: [
     BrowserModule,
