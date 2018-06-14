@@ -9,7 +9,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { UsertableComponent } from './usertable/usertable.component';
-
+import { UsersService } from "./users.service";
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 
 @NgModule({
@@ -25,9 +26,10 @@ import { UsertableComponent } from './usertable/usertable.component';
     HttpClientModule,
     BrowserAnimationsModule,
     MatTableModule,
-    MatSortModule
+    MatSortModule,
+    MatToolbarModule
   ],
-  providers: [],
+  providers: [UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
