@@ -8,6 +8,7 @@ table {
   width: 100%;
   margin: 0 auto;
   overflow: hidden;
+
 }
 tr{
   cursor: pointer;
@@ -61,7 +62,7 @@ th.mat-sort-header-sorted {
   overflow-y: auto;
 }
 .user_table{
-  height: 865px;
+  height: 868px;
 }
 .user_table img{
   height: 200px;
@@ -76,6 +77,11 @@ th.mat-sort-header-sorted {
   margin-right: auto;
   font-size: 24px;
   padding: 8px;
+}
+
+
+.mat-elevation-z8 {
+  font-size: 40px!important;
 }
 
 

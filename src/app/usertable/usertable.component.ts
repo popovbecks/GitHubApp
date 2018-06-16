@@ -26,6 +26,7 @@ export class UsertableComponent implements OnInit {
     this.time = this.tableSource;
     this.time = this.tableSource.slice(0, this.n);
     this.dataSource = new MatTableDataSource(this.time);
+    this.dataSource.sort = this.sort;
     this.n += 2;
     console.log(this.tableSource.slice(0, this.n))
   }
