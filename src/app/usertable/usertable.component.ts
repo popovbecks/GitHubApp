@@ -13,7 +13,15 @@ export class UsertableComponent implements OnInit {
   constructor(private userService: UsersService) { }
   dataSource;
   displayedColumns = ['#', 'avatar_url', 'login', 'id', 'type', 'site_admin'];
-  // tableSource = new MatTableDataSource(this.dataSource);
+  redirectTo(url){
+    let a = url.html_url;
+    window.open(a);
+  }
+  applyFilter(filterValue: string) {
+    filterValue = filterValue.trim(); // Remove whitespace
+    filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
+    this.dataSource.filter = filterValue;
+  }
 
   @ViewChild(MatSort) sort: MatSort;
   ngOnInit() {
@@ -25,7 +33,6 @@ export class UsertableComponent implements OnInit {
       this.dataSource.sort = this.sort;
       console.log(this.dataSource)
     });
-    //
   }
 
 }
