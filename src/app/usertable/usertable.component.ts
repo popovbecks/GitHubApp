@@ -12,10 +12,22 @@ export class UsertableComponent implements OnInit {
 
   constructor(private userService: UsersService) { }
   dataSource;
+  time;
+  tableSource;
+  data = this.userService.getUsers();
+  n = 6;
+
   displayedColumns = ['#', 'avatar_url', 'login', 'id', 'type', 'site_admin'];
   redirectTo(url){
     let a = url.html_url;
     window.open(a);
+  }
+  loadMore() {
+    this.time = this.tableSource;
+    this.time = this.tableSource.slice(0, this.n);
+    this.dataSource = new MatTableDataSource(this.time);
+    this.n += 2;
+    console.log(this.tableSource.slice(0, this.n))
   }
   applyFilter(filterValue: string) {
     filterValue = filterValue.trim(); // Remove whitespace
@@ -25,13 +37,14 @@ export class UsertableComponent implements OnInit {
 
   @ViewChild(MatSort) sort: MatSort;
   ngOnInit() {
-    this.userService.getUsers().subscribe(results => {
+    this.data.subscribe(results => {
       if(!results){
         return;
       }
-      this.dataSource = new MatTableDataSource(results);
+      this.tableSource = results;
+      this.dataSource = new MatTableDataSource(this.tableSource.slice(0,4));
+      console.log(this.dataSource);
       this.dataSource.sort = this.sort;
-      console.log(this.dataSource)
     });
   }
 

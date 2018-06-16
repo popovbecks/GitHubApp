@@ -12,4 +12,5 @@ export class UsersService {
 
     return this.http.get<User[]>(this.serviceUrl)
     }
+
 }

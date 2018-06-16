@@ -1,20 +1,40 @@
 *{
   padding: 0;
   margin: 0;
+  list-style-type: none;
 }
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 table {
   width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
 }
 tr{
   cursor: pointer;
 }
+tr td th{
+  border: 1px solid black;
+  text-align: center;
+}
 th.mat-sort-header-sorted {
   color: black;
 }
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+.mat-header-row {
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 9999;
+}
+.table_name{
+  padding:30px 0;
+  margin-left:30px;
+}
 .search{
   width: 25%;
   position: relative;
+}
+.counter{
+  margin-right:30px;
 }
 .search input {
   border: none;
@@ -36,3 +56,28 @@ th.mat-sort-header-sorted {
   background: #E8E8E8;
   color: #333;
 }
+.wrapper_of_main_side{
+  height: 100%;
+  overflow-y: auto;
+}
+.user_table{
+  height: 865px;
+}
+.user_table img{
+  height: 200px;
+  width: auto;
+}
+.parent{
+  margin-top:40px;
+}
+.parent button{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 24px;
+  padding: 8px;
+}
+
+
+
+
