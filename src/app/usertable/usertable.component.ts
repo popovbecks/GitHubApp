@@ -11,23 +11,23 @@ import { UsersService } from "../users.service";
 export class UsertableComponent implements OnInit {
 
   constructor(private userService: UsersService) { }
-  dataSource;
-  time;
-  tableSource;
+  private dataSource: any;
+  private temporary: any;
+  private tableSource: any;
   data = this.userService.getUsers();
-  n = 6;
+  public n = 6;
 
-  displayedColumns = ['#', 'avatar_url', 'login', 'id', 'type', 'site_admin'];
+  public displayedColumns = ['#', 'avatar_url', 'login', 'id', 'type', 'site_admin'];
   redirectTo(url){
     let a = url.html_url;
     window.open(a);
   }
   loadMore() {
-    this.time = this.tableSource;
-    this.time = this.tableSource.slice(0, this.n);
-    this.dataSource = new MatTableDataSource(this.time);
+    this.temporary = this.tableSource;
+    this.temporary = this.tableSource.slice(0, this.n);
+    this.dataSource = new MatTableDataSource(this.temporary);
     this.dataSource.sort = this.sort;
-    this.n += 2;
+    this.n += 4;
     console.log(this.tableSource.slice(0, this.n))
   }
   applyFilter(filterValue: string) {

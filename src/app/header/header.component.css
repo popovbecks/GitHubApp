@@ -17,3 +17,21 @@ h2{
   margin-left: 30px;
   margin-top:4px;
 }
+.menu{
+  position: absolute;
+  top: 15px;
+  right: -590px;
+}
+.menu li {
+  display: inline-block;
+}
+.menu li a{
+  color: #e3f2fd;
+  text-decoration: none;
+}
+.menu li a.active-link{
+  color: greenyellow;
+}
+.menu li:last-child{
+  margin-left: 15px;
+}
