@@ -27,8 +27,12 @@ th.mat-sort-header-sorted {
   z-index: 9999;
 }
 .table_name{
-  padding:30px 0;
+  padding:10px 0;
   margin-left:30px;
+}
+.nav_bar{
+  margin-top:24px;
+  position: sticky;
 }
 .search{
   width: 25%;
@@ -60,28 +64,33 @@ th.mat-sort-header-sorted {
 .wrapper_of_main_side{
   height: 100%;
   overflow-y: auto;
+  position: relative;
+  margin-top: 50px;
+  box-shadow:-8px 10px 8px 1px rgba(86,59,47,0.81);
+  -webkit-box-shadow:-8px 10px 8px 1px rgba(86,59,47,0.81);
+  -moz-box-shadow:-8px 10px 8px 1px rgba(86,59,47,0.81);
 }
 .user_table{
-  height: 868px;
+  height: 330px;
 }
 .user_table img{
-  height: 200px;
+  height: 80px;
   width: auto;
 }
 .parent{
-  margin-top:40px;
+  margin-top:70px;
 }
 .parent button{
   display: block;
   margin-left: auto;
   margin-right: auto;
-  font-size: 24px;
-  padding: 8px;
+  font-size: 18px;
+  padding: 4px;
 }
 
 
 .mat-elevation-z8 {
-  font-size: 40px!important;
+  font-size: 20px!important;
 }
 
 

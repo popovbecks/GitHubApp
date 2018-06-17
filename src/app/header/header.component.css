@@ -1,4 +1,19 @@
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~bootstrap/dist/css/bootstrap.css";
 nav{
   background-color: black;
+}
+nav img{
+  height: 50px;
+  width: auto;
+}
+.logo{
+  float: left;
+}
+h2{
+  padding: 0;
+  margin: 0;
+  float: left;
+  color: #e3f2fd;
+  margin-left: 30px;
+  margin-top:4px;
 }
