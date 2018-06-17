@@ -2,22 +2,28 @@
   <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-10">
-      <div class="wrapper_of_main_side">
-        <div class="nav_bar">
-          <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-            <div class="table_name"><h3>GitHub Users</h3></div>
-            <form class="search">
-              <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search by name" class="input">
-            </form>
-            <div class="counter">
-              <ul>
-                <li>Total loaded: {{n}}</li>
-                <li>Filtered: {{n}}</li>
-              </ul>
-            </div>
+      <div class="nav_bar">
+        <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+          <div class="table_name"><h3>GitHub Users</h3></div>
+          <form class="search">
+            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search by name" class="input">
+          </form>
+          <div class="counter">
+            <ul>
+              <li>Total loaded: {{n}}</li>
+              <li>Filtered: {{n}}</li>
+            </ul>
+          </div>
 
-          </nav>
-        </div>
+        </nav>
+      </div>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <div class="wrapper_of_main_side">
         <div class="user_table">
           <table mat-table [dataSource]="dataSource"  matSort class="mat-elevation-z8">
 

@@ -8,7 +8,6 @@ table {
   width: 100%;
   margin: 0 auto;
   overflow: hidden;
-
 }
 tr{
   cursor: pointer;
@@ -25,8 +24,7 @@ th.mat-sort-header-sorted {
   margin-left:30px;
 }
 .nav_bar{
-  margin-top:24px;
-  position: sticky;
+  margin-top:77px;
 }
 .search{
   width: 25%;
@@ -59,20 +57,20 @@ th.mat-sort-header-sorted {
   height: 100%;
   overflow-y: auto;
   position: relative;
-  margin-top: 50px;
+  margin-top: 6px;
   box-shadow:-8px 10px 8px 1px rgba(86,59,47,0.81);
   -webkit-box-shadow:-8px 10px 8px 1px rgba(86,59,47,0.81);
   -moz-box-shadow:-8px 10px 8px 1px rgba(86,59,47,0.81);
 }
 .user_table{
-  height: 330px;
+  height: 374px;
 }
 .user_table img{
   height: 80px;
   width: auto;
 }
 .parent{
-  margin-top:70px;
+  margin-top:32px;
 }
 .parent button{
   display: block;
@@ -84,7 +82,12 @@ th.mat-sort-header-sorted {
 .mat-elevation-z8 {
   font-size: 20px!important;
 }
-
+.mat-header-row {
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 9999;
+}
 
 
 
