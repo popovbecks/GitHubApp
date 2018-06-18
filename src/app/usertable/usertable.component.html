@@ -1,82 +1,85 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-1"></div>
-    <div class="col-md-10">
-      <div class="nav_bar">
-        <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-          <div class="table_name"><h3>GitHub Users</h3></div>
-          <form class="search">
-            <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search by name" class="input">
-          </form>
-          <div class="counter">
-            <ul>
-              <li>Total loaded: {{tableSource.length}}</li>
-              <li>Filtered: {{dataSource.filteredData.length}}</li>
-            </ul>
+<div class="wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="nav_bar">
+          <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+            <div class="table_name"><h3>GitHub Users</h3></div>
+            <form class="search">
+              <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search by name" class="input">
+            </form>
+            <div class="counter">
+              <ul>
+                <li>Total loaded: {{tableSource.length}}</li>
+                <li>Filtered: {{dataSource.filteredData.length}}</li>
+              </ul>
+            </div>
+
+          </nav>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="wrapper_of_main_side">
+          <div class="user_table">
+            <table mat-table [dataSource]="dataSource"  matSort class="mat-elevation-z8">
+
+              <ng-container matColumnDef="#">
+                <th mat-header-cell *matHeaderCellDef> # </th>
+                <td mat-cell *matCellDef="let element; let i = index"> {{i + 1}} </td>
+              </ng-container>
+
+
+              <ng-container matColumnDef="avatar_url">
+                <th mat-header-cell *matHeaderCellDef> Avatar img </th>
+                <td mat-cell *matCellDef="let element"> <div><img [src]="element.avatar_url" [alt]="element.login"></div> </td>
+              </ng-container>
+
+
+              <ng-container matColumnDef="login">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Nickname </th>
+                <td mat-cell *matCellDef="let element"> {{element.login}} </td>
+              </ng-container>
+
+
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
+                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="type">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Type </th>
+                <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="site_admin">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Is Site Admin </th>
+                <td mat-cell *matCellDef="let element"> {{element.site_admin?"Yes":"No"}} </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="redirectTo(row)"></tr>
+            </table>
           </div>
-
-        </nav>
-      </div>
-    </div>
-    <div class="col-md-1"></div>
-  </div>
-  <div class="row">
-    <div class="col-md-1"></div>
-    <div class="col-md-10">
-      <div class="wrapper_of_main_side">
-        <div class="user_table">
-          <table mat-table [dataSource]="dataSource"  matSort class="mat-elevation-z8">
-
-            <ng-container matColumnDef="#">
-              <th mat-header-cell *matHeaderCellDef> # </th>
-              <td mat-cell *matCellDef="let element; let i = index"> {{i + 1}} </td>
-            </ng-container>
-
-
-            <ng-container matColumnDef="avatar_url">
-              <th mat-header-cell *matHeaderCellDef> Avatar img </th>
-              <td mat-cell *matCellDef="let element"> <div><img [src]="element.avatar_url" [alt]="element.login"></div> </td>
-            </ng-container>
-
-
-            <ng-container matColumnDef="login">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header> Nickname </th>
-              <td mat-cell *matCellDef="let element"> {{element.login}} </td>
-            </ng-container>
-
-
-            <ng-container matColumnDef="id">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
-              <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-            </ng-container>
-
-            <ng-container matColumnDef="type">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header> Type </th>
-              <td mat-cell *matCellDef="let element"> {{element.type}} </td>
-            </ng-container>
-
-            <ng-container matColumnDef="site_admin">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header> Is Site Admin </th>
-              <td mat-cell *matCellDef="let element"> {{element.site_admin}} </td>
-            </ng-container>
-
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="redirectTo(row)"></tr>
-          </table>
         </div>
       </div>
+      <div class="col md-1"></div>
     </div>
-    <div class="col md-1"></div>
-  </div>
-  <div class="row">
-    <div class="col-md-1"></div>
-    <div class="col-md-10">
-      <div class="parent">
-        <div class="load_more">
-          <button type="button" class="btn btn-primary" (click)="loadMore()">Load more...</button>
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="parent">
+          <div class="load_more">
+            <button type="button" class="btn btn-primary" (click)="loadMore()">Load more...</button>
+          </div>
         </div>
       </div>
+      <div class="col-md-1"></div>
     </div>
-    <div class="col-md-1"></div>
   </div>
+
 </div>

@@ -24,7 +24,7 @@ th.mat-sort-header-sorted {
   margin-left:30px;
 }
 .nav_bar{
-  margin-top:77px;
+  margin-top:7px;
 }
 .search{
   width: 25%;
@@ -87,6 +87,9 @@ th.mat-sort-header-sorted {
   top: 0;
   background: white;
   z-index: 9999;
+}
+.wrapper{
+  margin-bottom: 44px;
 }
 
 
