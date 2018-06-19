@@ -7,34 +7,37 @@ nav{
   background-color: black;
 }
 nav img{
-  height: 50px;
+  height: 40px;
   width: auto;
 }
 .logo{
   float: left;
+  padding-top:10px;
+  padding-bottom:10px;
 }
-h2{
+h4{
   padding: 0;
   margin: 0;
   float: left;
   color: #e3f2fd;
   margin-left: 30px;
-  margin-top:4px;
+  margin-top:15px;
 }
 .menu{
   float: right;
-  margin-top:12px;
+  margin-top:18px;
   margin-right:4px;
+  font-weight: bold;
 }
 .menu li {
   display: inline-block;
 }
 .menu li a{
-  color: #e3f2fd;
+  color: #959595;
   text-decoration: none;
 }
 .menu li a.active-link{
-  color: greenyellow;
+  color: #C1CDD6;
 }
 .menu li:last-child{
   margin-left: 15px;

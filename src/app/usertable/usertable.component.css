@@ -25,6 +25,11 @@ th.mat-sort-header-sorted {
 }
 .nav_bar{
   margin-top:7px;
+  border: 1px solid black;
+  border-bottom: none;
+}
+.nav_bar h4{
+  font-weight: bolder;
 }
 .search{
   width: 25%;
@@ -32,19 +37,21 @@ th.mat-sort-header-sorted {
 }
 .counter{
   margin-right:30px;
+  font-size: 12px;
+  font-weight: bold;
 }
 .search input {
   border: none;
 }
 .search .input {
   width: 100%;
-  padding: 8px 37px 9px 15px;
+  padding: 4px 37px 5px 15px;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   box-shadow: inset 0 0 5px rgba(0,0,0,0.1), inset 0 1px 2px rgba(0,0,0,0.3);
   border-radius: 20px;
   background: #EEE;
-  font: 13px Tahoma, Arial, sans-serif;
+  font: 11px Tahoma, Arial, sans-serif;
   color: #555;
   outline: none;
 }
@@ -57,17 +64,22 @@ th.mat-sort-header-sorted {
   height: 100%;
   overflow-y: auto;
   position: relative;
-  margin-top: 6px;
-  box-shadow:-8px 10px 8px 1px rgba(86,59,47,0.81);
-  -webkit-box-shadow:-8px 10px 8px 1px rgba(86,59,47,0.81);
-  -moz-box-shadow:-8px 10px 8px 1px rgba(86,59,47,0.81);
+  border: 1px solid black;
+  border-right: 1px solid black;
 }
 .user_table{
-  height: 374px;
+  height: 375px;
+}
+.user_table table td{
+  font-size: 14px;
 }
 .user_table img{
-  height: 80px;
+  height: 70px;
   width: auto;
+  border-radius: 50%;
+}
+.avatar{
+  padding: 5px 0;
 }
 .parent{
   margin-top:32px;
@@ -89,7 +101,7 @@ th.mat-sort-header-sorted {
   z-index: 9999;
 }
 .wrapper{
-  margin-bottom: 58px;
+  margin-bottom: 37px;
 }
 
 

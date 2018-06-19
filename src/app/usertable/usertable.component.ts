@@ -10,11 +10,11 @@ import { UsersService } from "../users.service";
 export class UsertableComponent implements OnInit {
 
   constructor(private userService: UsersService) { }
-   dataSource: any;
-  private temporary: any;
-   tableSource: any;
-  data = this.userService.getUsers();
-  public n = 4;
+   public dataSource: any;
+  private temporaryArray: any = [];
+   public tableSource: any;
+  public cutArrayNumber = 30;
+  public counter;
 
   public displayedColumns = ['#', 'avatar_url', 'login', 'id', 'type', 'site_admin'];
   redirectTo(url){
@@ -22,26 +22,37 @@ export class UsertableComponent implements OnInit {
     window.open(a);
   }
   loadMore  () {
-    this.data.subscribe(results => {
+    this.counter = this.tableSource[this.tableSource.length - 1].id;
+    this.userService.getUsers(this.counter).subscribe(results => {
       if(!results){
         return;
       }
-      this.tableSource = results.slice(0, this.n);
+      this.temporaryArray = results.slice(0, this.cutArrayNumber);
+      this.tableSource = this.temporaryArray.reduce((coll, item)=> {
+        coll.push( item );
+        return coll;
+      }, this.tableSource );
+      console.log(this.temporaryArray)
       this.dataSource = new MatTableDataSource(this.tableSource);
       this.dataSource.sort = this.sort;
-      this.n += 4;
+      this.temporaryArray = [];
     });
   }
   applyFilter(filterValue: string) {
     filterValue = filterValue.trim(); // Remove whitespace
     filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
     this.dataSource.filter = filterValue;
-    console.log(this.dataSource)
   }
 
   @ViewChild(MatSort) sort: MatSort;
   ngOnInit() {
-    this.loadMore();
-  }
-
+    this.userService.getUsers(0).subscribe(results => {
+      if(!results){
+        return;
+      }
+      this.tableSource = results.slice(0, this.cutArrayNumber);
+      this.dataSource = new MatTableDataSource(this.tableSource);
+      this.dataSource.sort = this.sort;
+  });
+}
 }

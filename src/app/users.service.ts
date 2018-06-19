@@ -7,10 +7,10 @@ import { Observable } from "rxjs/index";
 export class UsersService {
 
   constructor(private http: HttpClient) { }
-  private serviceUrl = "https://api.github.com/users";
-    getUsers():Observable<User[]>{
+  // private serviceUrl = "https://api.github.com/users";
+    getUsers(counter): Observable<User[]>{
 
-    return this.http.get<User[]>(this.serviceUrl)
+    return this.http.get<User[]>(`https://api.github.com/users?since=${counter}`)
     }
 
 }
