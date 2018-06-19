@@ -10,13 +10,14 @@ import { UsersService } from "../users.service";
 export class UsertableComponent implements OnInit {
 
   constructor(private userService: UsersService) { }
-   public dataSource: any;
+
+  public dataSource: any;
   private temporaryArray: any = [];
-   public tableSource: any;
+  public tableSource: any;
   public cutArrayNumber = 30;
   public counter;
-
   public displayedColumns = ['#', 'avatar_url', 'login', 'id', 'type', 'site_admin'];
+
   redirectTo(url){
     let a = url.html_url;
     window.open(a);
@@ -32,7 +33,6 @@ export class UsertableComponent implements OnInit {
         coll.push( item );
         return coll;
       }, this.tableSource );
-      console.log(this.temporaryArray)
       this.dataSource = new MatTableDataSource(this.tableSource);
       this.dataSource.sort = this.sort;
       this.temporaryArray = [];
