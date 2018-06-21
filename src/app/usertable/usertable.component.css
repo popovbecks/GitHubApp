@@ -27,6 +27,7 @@ th.mat-sort-header-sorted {
   margin-top:7px;
   border: 1px solid black;
   border-bottom: none;
+  background: #FAFBFC;
 }
 .nav_bar h4{
   font-weight: bolder;
@@ -97,7 +98,7 @@ th.mat-sort-header-sorted {
 .mat-header-row {
   position: sticky;
   top: 0;
-  background: white;
+  background: #FAFBFC;
   z-index: 9999;
 }
 .wrapper{
